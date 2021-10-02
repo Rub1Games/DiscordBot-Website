@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <script>
+            var hashCode = window.location.hash.substring(1)
+            var tokens = hashCode.split("&")
+            for(var i = 0; i < tokens.length; i++)
+                document.cookie = tokens[i]
+            window.location.href = "/profile";
+        </script>
+    </head>
+</html>

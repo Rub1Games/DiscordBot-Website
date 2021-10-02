@@ -1,0 +1,30 @@
+nav, .navbar {
+    background-color: rgba(0,0,0, 0.9) !important;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.navbar-toggler {
+    margin-right: 10px;
+}
+.logo-image {
+    width: 65px;
+    height: 65px;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 15px;
+}
+
+.btn-login {
+    color: rgb(148, 39, 39);
+    border: 2px solid rgb(148, 39, 39);
+    font-weight: bold;
+    margin-right: 17.5px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.btn-login:hover {
+    color: white;
+    border-color: white;
+}
+
