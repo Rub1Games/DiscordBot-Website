@@ -63,7 +63,7 @@ app.post("/profile", async (req, res) => {
     return res.redirect("/profile")
 })
 
-app.listen(80 | process.env.PORT);
+app.listen(process.env.PORT);
 
 async function getPlaylist(user) {
     await client.connect()
