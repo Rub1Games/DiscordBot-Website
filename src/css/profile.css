@@ -93,3 +93,7 @@ nav, .navbar {
     font-size: 15px;
     text-align: left !important;
 }
+
+.show > .d-flex {
+    float: right;
+}
