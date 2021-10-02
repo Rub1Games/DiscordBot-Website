@@ -34,7 +34,7 @@ app.get("/logout", (req, res) => {
 })
 
 app.get("/login", (req, res) => {
-    res.redirect("https://discord.com/api/oauth2/authorize?response_type=token&client_id=551825154108293140&state=15773059ghq9183habn&scope=identify&redirect_uri=http://localhost/oauth2")
+    res.redirect("https://discord.com/api/oauth2/authorize?response_type=token&client_id=551825154108293140&state=15773059ghq9183habn&scope=identify&redirect_uri=http://discord.rub1gg.com/oauth2")
 })
 
 app.get("/oauth2", (req, res) => {
