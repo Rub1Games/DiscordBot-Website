@@ -56,14 +56,12 @@ app.post("/profile", async (req, res) => {
     const headers = {'Authorization': 'Bearer ' + req.cookies.access_token}
     var userData = await axios.get("https://discord.com/api/v8/users/@me", {headers: headers})
     let playList = []
-    console.log(req.body)
     if(typeof(req.body.music) != "object") playList = [req.body.music]
     else {
         for(var i = 0; i < req.body.music.length; i++)
             if(req.body.music[i] != "")
                 playList.push(req.body.music[i])
     }
-    console.log(playList)
     var result = await updatePlaylist(userData.data.id, JSON.stringify(playList))
     return res.redirect("/profile")
 })
@@ -84,7 +82,6 @@ async function getPlaylist(user) {
 
 async function updatePlaylist(user, playlist) {
     playlist = compressor.compress(playlist, {outputEncoding: "StorageBinaryString"});
-    console.log(playlist)
     await client.connect()
     const collection = client.db("rub1bot").collection("users");
     var result = await collection.findOne({"id": user});
