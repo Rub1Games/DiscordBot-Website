@@ -57,7 +57,6 @@ app.post("/profile", async (req, res) => {
     var userData = await axios.get("https://discord.com/api/v8/users/@me", {headers: headers})
     let playList = []
     if(req.body.save == "") {
-        console.log(req.body)
         if(typeof(req.body.music) != "object") playList = [req.body.music]
         else {
             for(var i = 0; i < req.body.music.length; i++)
