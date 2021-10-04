@@ -35,10 +35,13 @@
                 <% } %>
                 <input class="music-link mt-5 active" type="text" name="music" placeholder="Add your music link from spotify or youtube">
                 <a class="text-center add-button mt-5" onclick="addMusic()">+</a>
-                <div class="changes text-white">
-                    <h5 class="title-change">Changes were made what do you want to do</h5>
-                    <button class="btn btn-outline-success save" name="save">Save Changes</button>
-                    <button class="btn btn-outline-danger reset" name="reset">Reset</button>
+                <div class="changes text-white row">
+                    <h3 class="title-change col-lg-12">Changes were made what do you want to do</h3>
+                    <button class="btn btn-outline-success save col-3" name="save">Save Changes</button>
+                    <div class="col-1"></div>
+                    <button class="btn btn-outline-warning reset col-3" name="delete">Delete</button>
+                    <div class="col-1"></div>
+                    <button class="btn btn-outline-danger reset col-3" name="reset">Reset</button>
                 </div>
             </form>
         </div>

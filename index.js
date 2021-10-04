@@ -52,15 +52,18 @@ app.get("/profile", async (req, res) => {
 })
 
 app.post("/profile", async (req, res) => {
-    if(req.body.reset) return res.redirect("/profile")
+    if(req.body.reset == "") return res.redirect("/profile")
+    console.log(req.body)
     const headers = {'Authorization': 'Bearer ' + req.cookies.access_token}
     var userData = await axios.get("https://discord.com/api/v8/users/@me", {headers: headers})
     let playList = []
-    if(typeof(req.body.music) != "object") playList = [req.body.music]
-    else {
-        for(var i = 0; i < req.body.music.length; i++)
-            if(req.body.music[i] != "")
-                playList.push(req.body.music[i])
+    if(!req.body.delete == "") {
+        if(typeof(req.body.music) != "object") playList = [req.body.music]
+        else {
+            for(var i = 0; i < req.body.music.length; i++)
+                if(req.body.music[i] != "")
+                    playList.push(req.body.music[i])
+        }
     }
     var result = await updatePlaylist(userData.data.id, JSON.stringify(playList))
     return res.redirect("/profile")
